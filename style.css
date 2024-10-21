@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/*Body styling */
+body{
+	background-color: black;
+	margin: 0;
+	padding: 0;
+	
+}
+/*Header styling for Index.html*/
+#header {
+	background: #CF421A url("images/Halloween3.jpg")center; /* header image*/
+	background-size:cover;/* takes up the whole top section*/
+	position:relative;/* positon relative to the nav ul */
+	height: 700px;
+}
+
+
+/*Header styling for November.html*/
+#header2 {
+	background: #CF421A url("images/Nov.jpg")center; /* header image*/
+	background-size:cover;/* takes up the whole top section*/
+	position:relative;/* positon relative to the nav ul */
+	height: 700px;
+}
+
+/* Navigation tab styling starts here */
+#nav ul{
+	list-style: none;/*takes away bullets*/
+	display: flex;
+	justify-content: center;
+	position:absolute;
+	bottom: 20px;
+	width: 100%
+	
+}
+
+#nav ul li{
+	margin: 0 50px; /* spaces out the tabs*/
+}
+#nav ul li a {
+	color: white;
+	font-weight:bolder;
+	font-size: 25px;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	
+}
+nav ul li a:hover{
+	text-decoration-color: orangered;
+	text-decoration-style: wavy
+}
+
+
+/*customize text for Month and animate*/
+h1 {
+	float:right;
+	padding-top: 100px;
+	padding-right: 180px;
+	font-size: 100px;
+	font-style: italic;
+	animation: moveRight 3s ease-in-out, fadeIn 3s ease-in-out;
+	color: white;
+
+}
+/*customize text for Event*/
+.subtext{
+	padding-left: 95px;
+	font-size: 100px;
+}
+/* move h1 to the right while fading into the right of the header image*/
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+	/* starts the text invisible*/
+	 0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*Layout desin for class section*/
+.FreeEvents-section {
+	padding:50px 0; /*space between the header*/
+	text-align: center;
+	
+
+}
+.FreeEvents-header h2 {
+	font-size: 2.9em;
+	margin-bottom: 30px;
+	color: Orange;
+}
+
+
+.FreeEvents-images {
+	display: flex;
+	justify-content:center;
+	gap: 30px;
+	flex-wrap: wrap;
+	
+}
+
+.FreeEvents-option {
+	flex: 1 1 30%;/*remove so when decreasing the webpage the images go ontop of one another*/
+	max-width: 700px; /*size of the image*/
+}
+.FreeEvents-option img {
+	width: 100%;
+	height: auto;
+	border-radius: 40px;/*round edges of images*/
+	transition: transform 0.3s ease;
+	border:dashed white;
+	
+}
+
+.FreeEvents-option img:hover{
+	transform: scale(1.05);
+	border: dashed orangered;
+}
+.FreeEvents-option p {
+	font-size: 1.6em;
+	color: orange;
+	margin-top: 10px;
+	
+}
