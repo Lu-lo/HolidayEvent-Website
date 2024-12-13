@@ -1,47 +1,126 @@
 <!doctype html>
 <html>
 	<head>
-	<meta charset="utf-8">
-	<title>index.html</title>
-	<link rel="stylesheet" href="style.css"/>
+		<meta charset="utf-8">
+		<title>index.html</title>
+		<link rel="stylesheet" href="style.css"/>
+		<!-- Favicon-->
+		<link rel="icon" href="Favicon/favicon.ico"/>
 	</head>
 <body class= "Main-Page">
 	<div id="header">
 		<div class="Container">
-			<h1>OCTOBER<br><span class="subtext">Events</span></h1>
-			
 			<!--Navigation menu starts here -->	
 			<nav id="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
+					<li><a href="October.html">October Events</a></li>
 					<li><a href="November.html">November Events</a></li>
 					<li><a href="December.html">December Events</a></li>
 				</ul>
 			</nav>
+			
+			<!-- Banner -->
+			<div id="banner">
+				<div class="container">
+					<section>
+						<header class="major">
+							<h2>Welcome To LA Holiday Month Events!</h2>
+							<span class="byline">Check Out Events Occuring in LA</span>
+						</header>
+						
+					</section>			
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- Main showing free events for October -->
-	<div class="FreeEvents-section">  
-		<section class="FreeEvents-container">
-			<header class="FreeEvents-header"><h2>Free/Low Cost Events</h2></header>
-			<div class="FreeEvents-images">
-				<section class="FreeEvents-option">
-				<!-- add the href="#" to link to a different webpage when it gets clicked, or remove to avoid jumping-->
-					<a href="#" class="image feature"><img src="images/WAHO.png"  alt="FreeEvents 1"></a>
-					<p><strong>Free Event</strong></p>
-				</section>
-				<section class="FreeEvents-option">
-					<a href="#" class="image feature"><img src="images/LittleTokyo3.PNG" alt="FreeEvents 2"></a>
-					<p><strong>Free Event with Reservation </strong></p>
-				</section>
-				<section class="FreeEvents-option">
-					<a href="#" class="image feature"><img src="images/Halloween4.jpg" alt="FreeEvents 3"></a>
-					<p><strong>Under $15</strong></p>
-				</section>
-			</div>
+
+	
+	<!-- Main  -->
+	<div class="main-section">  
+		<section class="main-container">
+			<header class="major">
+				<h2>Discover events happening in Los Angeles this October, November, and December.
+				From festive celebrations, local happenings and cultural festivites.</h2>
+			</header>
+		<div class="main-images">
+			<section class="main-option">
+				<a class="image f"><img src= "images/oct.jpg" alt="FreeEvents 1"></a>
+				<p><strong>October Events</strong></p>
+			</section>
+			<section class="main-option">
+				<a class="image f"><img src="images/nov.jpg" alt="FreeEvents 2"></a>
+				<p><strong>November Events </strong></p>
+			</section>
+			<section class="main-option">
+				<a class="image f"><img src="images/dec.jpg" alt="FreeEvents 3"></a>
+				<p><strong>December Events</strong></p>
+			</section>
+				
+		</div>
+			<header class = "major">
+				<h2>If you want submit your event reach out below! </h2>
+			</header>
+			<!--button to show the form when clicked-->
+		<button id="inquiryButton">Submit an Inquiry</button>
+		<!--Here is Email form information-->
+		
+		<div id="inquiryForm" class="contact-section">
+		<div class="contact-intro">
+		<section>
+			<header class="contact-title">
+				<h2>Send A Message </h2>
+				<span class="contact-description">Inquire about adding your event!</span>
+			</header>
+			<!--added access key using web3forms api to link the website email account so that all inquirys are directed -->
+	 		<form class="contact-form" action="https://api.web3forms.com/submit" method="POST" onSubmit="return validateForm()">
+				<input type="hidden" name="access_key" value="5b55654b-e163-4040-b504-0946e0d8bca9" />
+    			<input type="hidden" name="subject" value="New Event Inquiry From LA Holiday Month Events" />
+				<input type="hidden" name="form_name" value="LA Holiday Month Events Website" />
+          
+							
+   				<div class="form-group-container">
+     				<div class="form-group">
+        				<label for="name" class="form-label">Name</label>
+        				<input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+      				</div>
+      				<div class="form-group">
+       					<label for="email" class="form-label">Email</label>
+        				<input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+      				</div>
+					<!-- select 3 buttons instead of text box-->
+				<div class="form-group">
+					<label for="location" class="form-label">Select Event Month</label>
+					<div id="location">
+						<label><input type="radio" name="location" value="Oct" required>October</label>
+						<label><input type="radio" name="location" value="Nov">November</label>
+						<label><input type="radio" name="location" value="Dec">December</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="event_type" class="form-label">Event Description</label>
+					<textarea class="form-textarea" id="event_type" name="event_type" placeholder="Type of Event"></textarea>
+				</div>
+				<div class="form-group">
+            		<label for="event_date" class="form-label">Choose Event Start Date</label>
+            		<input type="date" id="datepicker" name="event_date">
+        		</div>
+				</div>
+				
+				<!-- Adds hCaptcha verification -->
+				
+				<!-- Button created to submit inquiry form need to add so when form is submitted the date also shows-->
+    			<button class="form-submit" type="submit">Send Message</button>
+				
+			</form>
+		</section>
+		</div>
+		</div>
 		</section>
 	</div>
 	
+<!-- Footer maybe -->
+
 
 
 	 <!--Navigation menu starts here
@@ -53,7 +132,12 @@
                   frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                </iframe>
             </div>
- -->	
+ -->
+	<script src="myscript.js"></script>
+	
 
+
+	
+	
 </body>
 </html>
